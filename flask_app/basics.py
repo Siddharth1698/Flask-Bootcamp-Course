@@ -4,7 +4,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('basics.html')
+    pokemon = "blastatoise"
+    letters = list(pokemon)
+    dict = {'water':'bulba', 'fire':'charmandar'}
+    return render_template('basics.html',name=pokemon,letters=letters,dict=dict)
 
 if __name__ == '__main__':
     app.run(debug=True)
