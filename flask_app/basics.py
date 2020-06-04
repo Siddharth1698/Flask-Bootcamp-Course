@@ -4,10 +4,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    pokemon = "blastatoise"
-    letters = list(pokemon)
-    dict = {'water':'bulba', 'fire':'charmandar'}
-    return render_template('basics.html',name=pokemon,letters=letters,dict=dict)
+    return render_template('home.html')
+
+@app.route('/puppies/<name>')
+def pup_name(name):
+    return render_template('puppies.html',name=name)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
